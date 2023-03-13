@@ -28,14 +28,14 @@ services:
     depends_on:
       - db
   front:
-    # env_file: ./frontend/react-app/.env
+    env_file: ./frontend/react-app/.env
     build:
       context: ./frontend/
       dockerfile: Dockerfile
     volumes:
       - ./frontend:/usr/src/app
-    # environment:
-    #   - ./frontend/.env
+    environment:
+      - ./frontend/.env
     command: sh -c "yarn start"
     ports:
       - "3000:3000"
