@@ -36,7 +36,9 @@ services:
       - ./frontend:/usr/src/app
     environment:
       - ./frontend/.env
-    command: sh -c "yarn start"
+      - ./frontend/.env.prod
+    # command: sh -c "yarn start"
+    command: sh -c "serve -s build"
     ports:
       - "3000:3000"
 volumes:
